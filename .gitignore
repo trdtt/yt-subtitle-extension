@@ -1,0 +1,7 @@
+# Project
+
+# Python
+__pycache__/
+
+# IDE
+.idea/
