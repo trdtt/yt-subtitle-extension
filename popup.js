@@ -60,7 +60,7 @@ function download(text, filename) {
 }
 
 function langCode(lang) {
-    if (lang === 'Deutsch')
+    if (lang === 'German')
         return 'de'
     else if (lang === 'English')
         return 'en'
