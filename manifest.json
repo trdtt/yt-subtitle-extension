@@ -1,11 +1,20 @@
 {
   "description": "Adds a pop-up icon to the toolbar. Go to a Youtube video. Choose between English and German in the pop-up menu. Press the 'Download' button to download subtitles for the video. For better readability capitalisation and punctuation are added back to the text with the help of a language model.",
+
   "manifest_version": 2,
   "name": "Download Youtube Subtitles",
   "version": "1.1",
+
   "permissions": [
     "activeTab"
   ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "yt-subtitles-extension@lremane.github.com"
+    }
+  },
+
   "browser_action": {
     "default_icon": "icon.png",
     "default_title": "Download Youtube Subtitles",
