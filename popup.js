@@ -28,35 +28,25 @@ $(document).ready(async function () {
             `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`
         )
 
-
-        let lang = langCode($('#lang-button').text())
-
-        // convert data to MultiDict -> needed for backend specification
-        let formData = new FormData();
-        formData.append('video_id', tab.url)
-        formData.append('lang', lang)
-
-        fetch('https://yt-subtitles.lremane.xyz/data_input', {
-            method: "POST",
-            body: formData
-        })
-            .then(res => res.blob())
-            .then(async blob => {
-                const text = await new Response(blob).text()
-                download(text, `${tab.title}.txt`)
+        $.post('http://localhost:5000/data_input',
+            {
+                video_id: tab.url,
+                lang: langCode($('#lang-button').text())
+            },
+            function (data, status) {
+                if (data['status'] === 'successful')
+                    download(data['subtitles'], tab.title)
             })
     })
 })
 
-function download(text, filename) {
-    let element = document.createElement('a')
-
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURI(text))
-    element.setAttribute('download', filename)
-    element.style.display = "none"
+function download(subtitles, title) {
+    const element = document.createElement('a')
+    const file = new Blob([subtitles], {type: 'text/plain'})
+    element.href = URL.createObjectURL(file)
+    element.download = title + '.txt'
     document.body.appendChild(element)
     element.click()
-    document.body.removeChild(element)
 }
 
 function langCode(lang) {
