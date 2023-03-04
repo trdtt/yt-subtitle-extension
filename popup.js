@@ -28,7 +28,7 @@ $(document).ready(async function () {
             `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`
         )
 
-        $.post('http://localhost:5000/data_input',
+        $.post('https://yt-subtitles.lremane.xyz/data_input',
             {
                 video_id: tab.url,
                 lang: langCode($('#lang-button').text())
