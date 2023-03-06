@@ -15,10 +15,10 @@ The extension utilizes the Python package [yt-subtitle-downloader](https://gogs.
 \- ToDo
 
 ## Installation
-Download the yt-subtitles-extension-x.x.xpi file from the releases section. Once the file is downloaded, the next step is to import the extension into Firefox. Here's how to import the extension into Firefox:
+Download the `yt-subtitles-extension-x.x.xpi` file from the **Releases** section. Once the file is downloaded, the next step is to import the extension into Firefox. Here's how to import the extension into Firefox:
 
 1. Open Firefox and click on the menu button (three horizontal lines) located in the upper-right corner of the browser window.
-2. From the menu that appears, select "Add-ons and themes".
-3. Select the "Extensions" tab on the very right. 
-4. Click on the gear icon (⚙️) located in the upper-right corner of the page and select "Install Add-on From File".
+2. From the menu that appears, select `Add-ons and themes`.
+3. Select the `Extensions` tab on the very right. 
+4. Click on the gear icon (⚙️) located in the upper-right corner of the page and select `Install Add-on From File`.
 5. Once installed, the extension will appear in the "Add-ons" section of Firefox and can be used by clicking on its icon in the browser toolbar.
